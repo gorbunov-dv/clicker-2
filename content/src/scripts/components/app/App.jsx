@@ -4,10 +4,6 @@ import {connect} from 'react-redux';
 class App extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      count: 0
-    };
   }
 
   componentDidMount() {
@@ -26,5 +22,11 @@ class App extends Component {
     );
   }
 }
+
+const mapStateToProps = {state} => {
+  return {
+    count: state.count
+  };
+};
 
 export default App;
