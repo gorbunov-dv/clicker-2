@@ -6,13 +6,27 @@ class App extends Component {
     super(props);
   }
 
+  componentDidMount() {
+    document.addEventListener('click', () => {
+      this.props.dispatch({
+        type: 'ADD_COUNT'
+      });
+    });
+  }
+
   render() {
     return (
       <div>
-        Hello World
+        Count: {this.props.count}
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    count: state.count
+  };
+};
+
+export default connect(mapStateToProps)(App);
