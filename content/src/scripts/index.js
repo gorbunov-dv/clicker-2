@@ -12,7 +12,7 @@ document.body.insertBefore(anchor, document.body.childNodes[0]);
 
 const proxyStore =  new Store({
   state: {},
-  portName: 'example'
+  portName: 'RSC'
 });
 
 render(
