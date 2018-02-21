@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 
 class App extends Component {
   constructor(props) {
@@ -11,8 +12,8 @@ class App extends Component {
 
   componentDidMount() {
     document.addEventListener('click', () => {
-      this.setState({
-        count: this.state.count + 1
+      this.props.dispatch({
+        type: 'ADD_COUNT'
       });
     });
   }
@@ -20,7 +21,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        Count: {this.state.count}
+        Count: {this.props.count}
       </div>
     );
   }
